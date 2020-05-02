@@ -11,12 +11,9 @@ class App extends React.Component {
         //this.onTermSubmit(defaultTodoList);
     }
 
-    onTermSubmit = term => {
-        console.log(this.state.todos);
-        const newList = this.state.todos.push(term)
-        this.setState({ todos: newList })
-        console.log(this.state.todos);
-    }
+    onTermSubmit = (term) =>
+        this.setState({ todos: [...this.state.todos, term] });
+
     render() {
         console.log(this.state.todos);
         return (
