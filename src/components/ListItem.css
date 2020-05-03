@@ -1,3 +1,33 @@
+body {
+  font-size: large;
+  background: #ff0000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #d82929,
+    #ffe600
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #d82929,
+    #ffe600
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+li {
+  height: 40px;
+  line-height: 40px;
+}
+
+input {
+  background-color: yellow;
+}
+
 .check {
-    text-decoration: line-through;
+  text-decoration: line-through;
+}
+
+.main {
+  position: absolute;
+  left: 580px;
+  top: 20%;
 }

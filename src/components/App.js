@@ -4,11 +4,11 @@ import TodoList from "./TodoList";
 
 const defaultTodoList = [
   {
-    name: "Feed the Dragons",
+    name: "Go beyond the wall",
     check: false,
   },
   {
-    name: "Burn King's Landing",
+    name: "Pet Ghost",
     check: false,
   },
 ];
@@ -49,7 +49,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container">
+      <div className="ui container main">
+        <h1>TO-DO LIST</h1>
         <InputBar onSubmit={this.onTermSubmit} />
         <TodoList
           items={this.state.todos}
