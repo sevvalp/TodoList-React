@@ -17,7 +17,7 @@ class InputBar extends React.Component {
         return (
             <form onSubmit={this.onFormSubmit} className="ui form">
                 <div className="ui input">
-                    <input type="text" placeholder="Enter new to-do..." onChange={this.onInputChange} />
+                    <input type="text" value={this.state.term} onChange={this.onInputChange} />
                 </div>
             </form>  
         );
