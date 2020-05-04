@@ -15,6 +15,13 @@ body {
 li {
   margin-top: 10px;
 }
+
+span.list-item {
+  width: 160px;
+  display: -webkit-inline-flex;
+  text-align: left;
+}
+
 input {
   background-color: yellow;
 }

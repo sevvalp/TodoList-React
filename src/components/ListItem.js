@@ -5,7 +5,9 @@ const ListItem = ({ item, toggleActive, removeTodo }) => {
   return (
     <div>
       <li className={item.check ? "check" : "item"}>
-        <span onClick={() => toggleActive(item.name)}>{item.name}</span>
+        <span className="list-item" onClick={() => toggleActive(item.name)}>
+          {item.name}
+        </span>
         <span>
           <i onClick={() => removeTodo(item.name)} className="trash icon"></i>
         </span>
