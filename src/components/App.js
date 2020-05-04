@@ -20,15 +20,17 @@ class App extends React.Component {
   }
 
   onTermSubmit = (term) => {
-    this.setState({
-      todos: [
-        ...this.state.todos,
-        {
-          name: term,
-          check: false,
-        },
-      ],
-    });
+    if (term !== "") {
+      this.setState({
+        todos: [
+          ...this.state.todos,
+          {
+            name: term,
+            check: false,
+          },
+        ],
+      });
+    }
   };
 
   removeTodo = (name) => {
