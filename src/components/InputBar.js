@@ -1,33 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { addTodo } from "../actions";
+import { connect } from "react-redux";
 
-class InputBar extends React.Component {
-  state = { term: "" };
+const InputBar = ({ addTodo }) => {
+  const [term, setTerm] = useState("");
 
-  onInputChange = (event) => {
-    this.setState({ term: event.target.value });
+  const onInputChange = (event) => {
+    setTerm(event.target.value);
   };
 
-  onFormSubmit = (event) => {
-    console.log(this.props);
+  const onFormSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.state.term);
-    this.setState({ term: "" });
+    console.log(term);
+    addTodo(term);
+    setTerm("");
   };
 
-  render() {
-    return (
-      <form onSubmit={this.onFormSubmit} className="ui form">
-        <div className="ui input">
-          <input
-            type="text"
-            value={this.state.term}
-            placeholder="Add new todo"
-            onChange={this.onInputChange}
-          />
-        </div>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={onFormSubmit} className="ui form">
+      <div className="ui input">
+        <input
+          type="text"
+          value={term}
+          placeholder="Add new todo"
+          onChange={onInputChange}
+        />
+      </div>
+    </form>
+  );
+};
 
-export default InputBar;
+const mapStateToProps = (state) => {
+  return { addTodo: state.addTodo };
+};
+
+export default connect(mapStateToProps, { addTodo })(InputBar);

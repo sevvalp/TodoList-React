@@ -1,18 +1,18 @@
 import React from "react";
+import { connect } from "react-redux";
 import ListItem from "./ListItem";
 
-const TodoList = ({ items, removeTodo, toggleActive }) => {
+const TodoList = ({ items }) => {
   const renderedList = items.map((item) => {
-    return (
-      <ListItem
-        item={item}
-        key={item.name}
-        toggleActive={toggleActive}
-        removeTodo={removeTodo}
-      />
-    );
+    return <ListItem item={item} />;
   });
   return <div>{renderedList}</div>;
 };
 
-export default TodoList;
+const mapStateToProps = (state) => {
+  return {
+    items: state.todos,
+  };
+};
+
+export default connect(mapStateToProps)(TodoList);
